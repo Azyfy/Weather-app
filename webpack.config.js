@@ -9,4 +9,8 @@ module.exports = {
   optimization: {
     minimize: false
   },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/
+  },
 };
