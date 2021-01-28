@@ -1,5 +1,7 @@
-function test() {
-    console.log(`test `);
-}
+import { getWeather } from './getWeather'
 
-test();
+
+let cityName = "Berlin";
+
+getWeather(cityName);
+console.log("Got");
