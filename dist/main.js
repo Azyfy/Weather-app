@@ -83,6 +83,7 @@ function getGif (weather, t0) {
 
 let searchBtn = document.querySelector("#search");
 let tempSelect = document.querySelector("#select-temp");
+let toggleBtn = document.querySelector("#toggle-background");
 let t0;
 
 searchBtn.addEventListener("keyup", (e) => {
