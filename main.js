@@ -5,14 +5,12 @@
 function getGif (weather) {
     fetch(`https://api.giphy.com/v1/gifs/translate?api_key=00ibi7jgk4Tkog3u9VTqyvTJQYt3Zfa0&s=${weather}`, {mode: 'cors'})
     .then(function(response) {
-        console.log(response);
         if(!response.ok) {
             throw "Gif error!";
         }
         return response.json();
     })
     .then(function(response) {
-        console.log(response);
         let img = document.querySelector("#gif");
         img.src = response.data.images.original.url;
     })
@@ -36,6 +34,7 @@ function getGif (weather) {
      }
      else if(!response.ok) {
        alert("Weather error occurred!");
+       console.error("Weather error.");
        return;
      }
 
@@ -43,6 +42,7 @@ function getGif (weather) {
    }
 
    function fillTemplate (weather, temp) {
+      let container = document.querySelector(".container");
       let city = document.querySelector("#city");
       let country = document.querySelector("#country");
       let weatherDesc = document.querySelector("#weather");
@@ -62,6 +62,7 @@ function getGif (weather) {
       weatherDesc.innerText = `${weather.weather[0].description}`;
       temperature.innerText = `${weather.main.temp}${deg}`;
       humidity.innerText = `${weather.main.humidity} %`;
+      container.style.display = "grid";
       getGif(weather.weather[0].main);
    }
 
