@@ -1,7 +1,6 @@
 import { getWeather } from './getWeather'
 
 
-let cityName = "Berlin";
+let cityName = "BerliN";
 
 getWeather(cityName);
-console.log("Got");
