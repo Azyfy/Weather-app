@@ -10,6 +10,7 @@ import { getGif } from './getGif'
      }
      else if(!response.ok) {
        alert("Weather error occurred!");
+       console.error("Weather error.");
        return;
      }
 
@@ -17,6 +18,7 @@ import { getGif } from './getGif'
    }
 
    function fillTemplate (weather, temp) {
+      let container = document.querySelector(".container");
       let city = document.querySelector("#city");
       let country = document.querySelector("#country");
       let weatherDesc = document.querySelector("#weather");
@@ -36,6 +38,7 @@ import { getGif } from './getGif'
       weatherDesc.innerText = `${weather.weather[0].description}`;
       temperature.innerText = `${weather.main.temp}${deg}`;
       humidity.innerText = `${weather.main.humidity} %`;
+      container.style.display = "grid";
       getGif(weather.weather[0].main);
    }
 
