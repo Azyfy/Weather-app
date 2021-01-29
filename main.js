@@ -1,22 +1,24 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 
-;// CONCATENATED MODULE: ./src/getWeather.js
-/*
-function getWeather (city) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=3ea0f850bb5508c08514a8d1e9523f48`, {mode: 'cors'})
+;// CONCATENATED MODULE: ./src/getGif.js
+function getGif (weather) {
+    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=00ibi7jgk4Tkog3u9VTqyvTJQYt3Zfa0&s=${weather}`, {mode: 'cors'})
     .then(function(response) {
+        console.log(response);
         return response.json();
-      })
+    })
     .then(function(response) {
-       if(response.message == "city not found") {
-       alert(response.message); };
-      })
-    .catch(error =>  console.log(error));
-    }
-          Switched to do it with async await. 
-    */
-   
+        console.log(response);
+        let img = document.querySelector("#gif");
+        img.src = response.data.images.original.url;
+    });
+}
+
+
+;// CONCATENATED MODULE: ./src/getWeather.js
+
+
    async function getWeather(city, temp) {
      let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}${temp}&APPID=3ea0f850bb5508c08514a8d1e9523f48`, {mode: 'cors'});
      let weather = await response.json();
@@ -48,6 +50,7 @@ function getWeather (city) {
       weatherDesc.innerText = `${weather.weather[0].description}`;
       temperature.innerText = `${weather.main.temp}${deg}`;
       humidity.innerText = `${weather.main.humidity} %`;
+      getGif(weather.weather[0].main);
    }
 
     
@@ -64,6 +67,5 @@ searchBtn.addEventListener("keyup", (e) => {
     searchBtn.value = "";
     };
 });
-
 /******/ })()
 ;
