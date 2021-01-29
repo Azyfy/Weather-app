@@ -1,6 +1,11 @@
 import { getWeather } from './getWeather'
 
-
-let cityName = "BerliN";
-
-getWeather(cityName);
+let searchBtn = document.querySelector("#search");
+console.log(searchBtn);
+searchBtn.addEventListener("keyup", (e) => {
+    if (e.keyCode === 13) {
+        //keyCode for enter
+    getWeather(searchBtn.value);
+    searchBtn.value = "";
+    };
+});
