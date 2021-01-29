@@ -2,6 +2,7 @@ import { getWeather } from './getWeather'
 
 let searchBtn = document.querySelector("#search");
 let tempSelect = document.querySelector("#select-temp");
+let t0;
 
 searchBtn.addEventListener("keyup", (e) => {
     if (e.keyCode === 13) {
@@ -10,8 +11,8 @@ searchBtn.addEventListener("keyup", (e) => {
         if (searchBtn.value == "") {
             return;
         };
-
-        getWeather(searchBtn.value, tempSelect.value);
+        t0 = performance.now();
+        getWeather(searchBtn.value, tempSelect.value, t0);
         searchBtn.value = "";
     };
 });

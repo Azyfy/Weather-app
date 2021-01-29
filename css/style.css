@@ -54,3 +54,13 @@ body {
 #gif {
     border-radius: 50%;
 }
+
+.time-display {
+    display: block;
+    font-size: smaller;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+}
