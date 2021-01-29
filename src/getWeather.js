@@ -3,13 +3,18 @@ import { getGif } from './getGif'
    async function getWeather(city, temp) {
      let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}${temp}&APPID=3ea0f850bb5508c08514a8d1e9523f48`, {mode: 'cors'});
      let weather = await response.json();
-     // !!response.ok do error later
 
-     console.log("asy");
+     if (weather.message == "city not found") {
+      alert("City not found.");
+      return
+     }
+     else if(!response.ok) {
+       alert("Weather error occurred!");
+       return;
+     }
+
      fillTemplate (weather, temp);
-     console.log(weather);
    }
-   console.log("this weather");
 
    function fillTemplate (weather, temp) {
       let city = document.querySelector("#city");
