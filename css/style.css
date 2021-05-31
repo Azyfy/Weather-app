@@ -1,0 +1,67 @@
+body {
+    background-image: url("../img/cloud.jpeg");
+}
+
+#input {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 75px;
+}
+
+.container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    display: none;
+
+}
+
+.weather-card, #img-card, #gif {
+    height: 300px;
+    width: 300px;
+}
+
+.weather-card, #img-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.card-header {
+   margin-top: 90px;
+   margin-bottom: 10px;
+}
+
+.card {
+    margin-top: 10px;
+}
+
+#weather {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.card-info, .card-info-o {
+    font-size: large;
+}
+
+.card-info-o {
+    font-weight: bold;
+}
+
+#gif {
+    border-radius: 50%;
+}
+
+.time-display {
+    display: block;
+    font-size: smaller;
+}
+
+#footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
