@@ -2,7 +2,7 @@
 
 Learn whats the weather in a city. 
 
-[Link](https://azzryel.github.io/Weather-app/)
+[Link](https://azyfy.github.io/Weather-app/)
 
 ###### Features 
 - Input a city name and fetch its weather, temperature, humidity from **openweather API**
